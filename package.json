@@ -1,0 +1,7 @@
+{
+  "name": "black-to-white-latency-test",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "npx serve --no-clipboard"
+  }
+}

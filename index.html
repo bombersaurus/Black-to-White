@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latency Test</title>
+  <style>
+    * { margin: 0; padding: 0; }
+    html, body {
+      margin: 0;
+      height: 100vh;
+      background-color: #000000;
+      will-change: background-color;
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      touch-action: manipulation;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    (function() {
+      const body = document.body;
+      function toWhite() { body.style.backgroundColor = '#FFFFFF'; }
+      function toBlack() { body.style.backgroundColor = '#000000'; }
+      function onKeyDown(e) {
+        if (e.key === ' ' || e.key === 'r' || e.key === 'R') {
+          e.preventDefault();
+          toBlack();
+        }
+      }
+      body.addEventListener('pointerdown', toWhite, { passive: true });
+      document.addEventListener('keydown', onKeyDown);
+    })();
+  </script>
+</body>
+</html>
